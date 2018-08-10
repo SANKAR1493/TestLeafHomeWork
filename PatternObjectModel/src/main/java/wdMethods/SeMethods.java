@@ -180,7 +180,7 @@ public class SeMethods extends Reporter implements WdMethods{
 		try {
 			bReturn =  driver.getCurrentUrl();
 		} catch (WebDriverException e) {
-			reportStep(e.getMessage(), "FAIL");
+			reportStep("Unknown exception occured while clicking in the field :", "FAIL");
 		} 
 		return bReturn;
 	}
