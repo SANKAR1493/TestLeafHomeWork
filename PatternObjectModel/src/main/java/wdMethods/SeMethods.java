@@ -150,6 +150,8 @@ public class SeMethods extends Reporter implements WdMethods{
 			reportStep("Unknown exception occured while clicking in the field :","FAIL",false);
 		} 
 	}
+	
+	
 
 	public String getText(WebElement ele) {	
 		String bReturn = "";
@@ -173,6 +175,17 @@ public class SeMethods extends Reporter implements WdMethods{
 		return bReturn;
 	}
 
+	public String getCurrentURL() {		
+		String bReturn = "";
+		try {
+			bReturn =  driver.getCurrentUrl();
+		} catch (WebDriverException e) {
+			reportStep(e.getMessage(), "FAIL");
+		} 
+		return bReturn;
+	}
+	
+	
 	public String getAttribute(WebElement ele, String attribute) {		
 		String bReturn = "";
 		try {
